@@ -1,0 +1,18 @@
+#clone
+git clone https://github.com/quanted/qed_hem.git
+
+#after cloning a project with submodules
+#fetch data and checkout appropriate project
+git submodule update --init --recursive 
+
+#update hem_app
+cd hem_app
+#head will be detached
+git checkout master
+
+#secret key for qed_hem
+# the file secret_key_django_dropbox.txt is shared 
+# on dropbox in directory ubertool_keys (or by other means)
+# needs to be placed the qed_hem directory
+
+#pycharm configuration
