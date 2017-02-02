@@ -16,3 +16,9 @@ git checkout master
 # needs to be placed the qed_hem directory
 
 #pycharm configuration
+#change interpreter to 2.7.* with django, etc
+#also edit configuration (qed_hem django button)
+#add local_settings.py to environmental variables for qed_hem (use + to the right):
+#DJANGO_SETTINGS_MODULE=settings_local;PYTHONUNBUFFERED=1
+
+
