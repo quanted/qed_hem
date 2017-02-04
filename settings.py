@@ -46,6 +46,7 @@ TEMPLATES = [
                  os.path.join(TEMPLATE_ROOT, 'uber2017'),
                  os.path.join(TEMPLATE_ROOT, 'uber2011'),
                  os.path.join(TEMPLATE_ROOT, 'hwbi'),
+                 os.path.join(TEMPLATE_ROOT, 'hem'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -78,7 +79,7 @@ INSTALLED_APPS = (
     #'cts_app.cts_testing',
     #'cts_app.cts_api',
     'splash_app',
-    #'hem_app',
+    'hem_app',
     #'ubertool_app',
     #'hwbi_app',
 )
