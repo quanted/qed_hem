@@ -16,9 +16,9 @@ print('settings.py')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed/') #.replace('\\','/'))
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_qed')
-#os.path.join(PROJECT_ROOT, 'templates_qed')
+TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed') #.replace('\\','/'))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_qed')
+os.path.join(PROJECT_ROOT, 'templates_qed')
 
 # cts_api addition:
 os.environ.update({'CTS_VERSION': '1.8'})  # keeping CTS version in one place, todo: django var instead
@@ -145,7 +145,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static_qed'),
+    os.path.join(PROJECT_ROOT, 'static_qed/hem'),
 )
 
 STATICFILES_FINDERS = (

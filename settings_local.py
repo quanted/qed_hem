@@ -74,6 +74,6 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 if DEBUG:
     import logging
     logging.basicConfig(
-        level = logging.DEBUG,
-        format = '%(asctime)s %(levelname)s %(message)s',
+        level=logging.DEBUG,
+        format='%(asctime)s %(levelname)s %(message)s',
     )
