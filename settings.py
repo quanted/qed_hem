@@ -27,6 +27,7 @@ NODEJS_PORT = 80  # default nodejs port
 # todo: look into ws w/ django 1.10
 
 IS_PUBLIC = False
+IS_DEVELOPMENT = True
 
 ADMINS = (
     ('Tom Purucker', 'purucker.tom@epa.gov'),
