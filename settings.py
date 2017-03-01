@@ -108,8 +108,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite3'),
+    },
+    'hem': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'hem_app/hem_db.sqlite3'),
     }
 }
+
+DATABASE_ROUTERS = {'hem_app.router.HemRouter'}
 
 
 # Setups databse-less test runner (Only needed for running test)
