@@ -109,13 +109,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite3'),
     },
-    'hem': {
+    'hem_db': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_ROOT, 'hem_app/hem_db.sqlite3'),
     }
 }
 
-DATABASE_ROUTERS = {'hem_app.router.HemRouter'}
+DATABASE_ROUTERS = {'routers.HemRouter'}
 
 
 # Setups databse-less test runner (Only needed for running test)
@@ -152,21 +152,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static_qed/hem'),
+    os.path.join(PROJECT_ROOT, "static_qed"),
 )
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 STATIC_URL = '/static_qed/'
 
-#print('BASE_DIR = %s' %BASE_DIR)
+# print('BASE_DIR = %s' %BASE_DIR)
 print('PROJECT_ROOT = %s' %PROJECT_ROOT)
 print('TEMPLATE_ROOT = %s' %TEMPLATE_ROOT)
-#print('STATIC_ROOT = %s' %STATIC_ROOT)
+# print('STATIC_ROOT = %s' %STATIC_ROOT)
 
 # Path to Sphinx HTML Docs
 # http://django-docs.readthedocs.org/en/latest/

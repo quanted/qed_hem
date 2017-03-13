@@ -77,3 +77,60 @@ if DEBUG:
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
     )
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, "static_qed/hem"),
+)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dev_qed_dave',
+        'USER': 'app_hem',
+        'PASSWORD': 'Iw2c4L@bm0r',
+        'HOST': 'amad5.rtpnc.epa.gov',
+        'PORT': '3306'
+    },
+    'hem_db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dev_hem_dave',
+        'USER': 'app_hem',
+        'PASSWORD': 'Iw2c4L@bm0r',
+        'HOST': 'amad5.rtpnc.epa.gov',
+        'PORT': '3306'
+    },
+}
+
+# Application definition
+INSTALLED_APPS = (
+    #'cts_api',
+    #'cts_testing',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    #'mod_wsgi.server',  # Only needed for mod_wsgi express (Python driver for Apache) e.g. on the production server
+    # 'docs',
+    # 'rest_framework_swagger',
+    #'cts_app',  # cts django app
+    #'cts_app.filters',  # cts filters for pchem table
+    #'cts_app.cts_testing',
+    #'cts_app.cts_api',
+    'splash_app',
+    'hem_app',
+    #'ubertool_app',
+    #'hwbi_app',
+)
+
+
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
