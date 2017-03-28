@@ -52,12 +52,13 @@ try:
     with open('secret_key_django_dropbox.txt') as f:
         SECRET_KEY = f.read().strip()
 except IOError as e:
-    print "Could not find secret file"
+    print("Could not find secret file")  # for python 3x
     SECRET_KEY = 'Shhhhhhhhhhhhhhh'
 
     ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    'testserver',
 ]
 
 #IS_PUBLIC = True
@@ -134,3 +135,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+# Setups databse-less test runner (Only needed for running test)#
+# TEST_RUNNER = 'testing.DatabaselessTestRunner'
