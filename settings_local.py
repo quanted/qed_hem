@@ -85,23 +85,16 @@ STATICFILES_DIRS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dev_qed_dave',
-        'USER': 'app_hem',
-        'PASSWORD': 'Iw2c4L@bm0r',
-        'HOST': 'amad5.rtpnc.epa.gov',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite3'),
     },
     'hem_db': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dev_hem_dave',
-        'USER': 'app_hem',
-        'PASSWORD': 'Iw2c4L@bm0r',
-        'HOST': 'amad5.rtpnc.epa.gov',
-        'PORT': '3306'
-    },
+       'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'hem_app/hem_db.sqlite3'),
+   }
 }
 
+DATABASE_ROUTERS = {'routers.HemRouter'}
 # Application definition
 INSTALLED_APPS = (
     #'cts_api',
