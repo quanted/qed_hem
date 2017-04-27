@@ -124,11 +124,13 @@ INSTALLED_APPS = (
     #'cts_app.cts_api',
     'splash_app',
     'hem_app',
+    'crispy_forms',
+    'rest_framework',
     #'ubertool_app',
     #'hwbi_app',
 )
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
