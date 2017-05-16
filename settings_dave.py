@@ -15,7 +15,13 @@ from settings import *
 import os
 import sys
 
-print('settings_local.py')
+print('settings_dave.py')
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed') #.replace('\\','/'))
+os.path.join(PROJECT_ROOT, 'templates_qed')
 
 # Get machine IP address
 MACHINE_ID = "developer"
@@ -78,10 +84,25 @@ if DEBUG:
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
     )
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+STATIC_ROOT = (
+	os.path.join(PROJECT_ROOT, 'hem_app\\static')
+)
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, "static_qed/hem"),
+    os.path.join(PROJECT_ROOT, "static_qed"),
 )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+STATIC_URL = '/static_qed/'
+
 
 DATABASES = {
     'default': {
@@ -91,6 +112,12 @@ DATABASES = {
         'PASSWORD': 'Iw2c4L@bm0r',
         'HOST': 'darwin.rtpnc.epa.gov',
         'PORT': '3306'
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'prod_dashboard',
+        #'USER': 'dave',
+        #'PASSWORD': 'cigar200',
+        #'HOST': 'dalton.epa.gov',
+        #'PORT': '5432'
     },
     'hem_db': {
         'ENGINE': 'django.db.backends.mysql',
@@ -99,6 +126,12 @@ DATABASES = {
         'PASSWORD': 'Iw2c4L@bm0r',
         'HOST': 'darwin.rtpnc.epa.gov',
         'PORT': '3306'
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'prod_hem_app',
+        #'USER': 'dave',
+        #'PASSWORD': 'cigar200',
+        #'HOST': 'dalton.epa.gov',
+        #'PORT': '5432'
     },
 }
 
