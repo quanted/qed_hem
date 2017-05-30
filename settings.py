@@ -66,7 +66,6 @@ TEMPLATES = [
 INSTALLED_APPS = (
     #'cts_api',
     #'cts_testing',
-    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,8 +85,6 @@ INSTALLED_APPS = (
     #'ubertool_app',
     #'hwbi_app',
 )
-
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # This breaks the pattern of a "pluggable" TEST_CTS django app, but it also makes it convenient to describe the
 # server hosting the TEST API.

@@ -115,7 +115,6 @@ INSTALLED_APPS = (
     #'cts_app.cts_api',
     'splash_app',
     'hem_app',
-    'crispy_forms',
     'rest_framework',
     #'ubertool_app',
     #'hwbi_app',

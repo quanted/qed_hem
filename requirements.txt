@@ -3,7 +3,6 @@ beautifulsoup4==4.6.0
 certifi==2017.4.17
 Django==1.10.5
 django-autocomplete-light==3.2.7
-django-crispy-forms==1.6.1
 django-extensions==1.7.9
 django-livereload-server==0.2.3
 django-queryset-csv==1.0.0
