@@ -1,6 +1,6 @@
 from django.contrib import admin
-from hem_app.models import Category, ProductAssignment, Product
+from hem_app.models import Category, Assignment, Product
 
 admin.site.register(Category)
-admin.site.register(ProductAssignment)
+admin.site.register(Assignment)
 admin.site.register(Product)
