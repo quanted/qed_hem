@@ -52,12 +52,13 @@ try:
     with open('secret_key_django_dropbox.txt') as f:
         SECRET_KEY = f.read().strip()
 except IOError as e:
-    print "Could not find secret file"
+    print("Could not find secret file")  # for python 3x
     SECRET_KEY = 'Shhhhhhhhhhhhhhh'
 
     ALLOWED_HOSTS = [
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    'testserver',
 ]
 
 #IS_PUBLIC = True
@@ -77,3 +78,58 @@ if DEBUG:
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
     )
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, "static_qed/hem"),
+)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite3'),
+    },
+    'hem_db': {
+       'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'hem_app/hem_db.sqlite3'),
+   }
+}
+
+DATABASE_ROUTERS = {'routers.HemRouter'}
+
+# Application definition
+INSTALLED_APPS = (
+    #'cts_api',
+    #'cts_testing',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    #'mod_wsgi.server',  # Only needed for mod_wsgi express (Python driver for Apache) e.g. on the production server
+    # 'docs',
+    # 'rest_framework_swagger',
+    #'cts_app',  # cts django app
+    #'cts_app.filters',  # cts filters for pchem table
+    #'cts_app.cts_testing',
+    #'cts_app.cts_api',
+    'splash_app',
+    'hem_app',
+    'rest_framework',
+    #'ubertool_app',
+    #'hwbi_app',
+)
+
+
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+# Setups databse-less test runner (Only needed for running test)#
+# TEST_RUNNER = 'testing.DatabaselessTestRunner'

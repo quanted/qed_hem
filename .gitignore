@@ -54,6 +54,8 @@ coverage.xml
 
 # Django stuff:
 *.log
+
+
 hem_app/local_settings.py
 
 # Flask stuff:
@@ -90,3 +92,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# keep these settings out of repo
+settings_dave.py
